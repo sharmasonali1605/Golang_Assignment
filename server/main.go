@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
+	"grpc-blog/grpc-blog/blogpb"
 	"log"
 	"net"
 	"os"
-
-	"Golang_Assignment/blogpb"
 
 	"google.golang.org/grpc"
 )
