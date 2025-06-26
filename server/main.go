@@ -32,6 +32,6 @@ func main() {
 
 	log.Printf("gRPC server started on port %s", port)
 	if err := grpcServer.Serve(lis); err != nil {
-		log.Fatalf("Failed to serve: %v", err)
+		log.Fatalf("Failed to start Server : %v", err)
 	}
 }

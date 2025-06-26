@@ -35,14 +35,16 @@ func main() {
 		log.Fatalf("CreatePost failed: %v", err)
 	}
 	createdPost := createRes.GetPost()
-	fmt.Println("✅ Created Post:", createdPost)
+	fmt.Println("CREATED POST:", createdPost)
+	fmt.Println("******************************")
 
 	// Read Post
 	readRes, err := client.ReadPost(ctx, &blogpb.ReadPostRequest{PostId: createdPost.PostId})
 	if err != nil {
 		log.Fatalf("ReadPost failed: %v", err)
 	}
-	fmt.Println("📖 Read Post:", readRes.GetPost())
+	fmt.Println("READ POST:", readRes.GetPost())
+	fmt.Println("******************************")
 
 	// Update Post
 	updatedPost := &blogpb.Post{
@@ -57,12 +59,14 @@ func main() {
 	if err != nil {
 		log.Fatalf("UpdatePost failed: %v", err)
 	}
-	fmt.Println("✏️ Updated Post:", updateRes.GetPost())
+	fmt.Println("UPDATED POST:", updateRes.GetPost())
+	fmt.Println("******************************")
 
 	// Delete Post
 	deleteRes, err := client.DeletePost(ctx, &blogpb.DeletePostRequest{PostId: createdPost.PostId})
 	if err != nil {
 		log.Fatalf("DeletePost failed: %v", err)
 	}
-	fmt.Println("🗑️ Delete Response:", deleteRes.GetMessage())
+	fmt.Println("DELETE RESPONSE:", deleteRes.GetMessage())
+	fmt.Println("******************************")
 }
