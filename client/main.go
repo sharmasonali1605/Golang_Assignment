@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"github.com/sharmasonali1605/Golang_Assignment/blogpb"
-
 	"google.golang.org/grpc"
 )
 
@@ -20,6 +19,10 @@ func main() {
 
 	client := blogpb.NewBlogServiceClient(conn)
 
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	// Create Post
 	post := &blogpb.Post{
 		Title:   "My First Post",
 		Content: "Hello from gRPC!",
@@ -27,14 +30,39 @@ func main() {
 		Tags:    []string{"go", "grpc"},
 	}
 
-	// Create
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-	defer cancel()
-
-	res, err := client.CreatePost(ctx, &blogpb.CreatePostRequest{Post: post})
+	createRes, err := client.CreatePost(ctx, &blogpb.CreatePostRequest{Post: post})
 	if err != nil {
 		log.Fatalf("CreatePost failed: %v", err)
 	}
+	createdPost := createRes.GetPost()
+	fmt.Println("✅ Created Post:", createdPost)
 
-	fmt.Println("Created Post:", res.GetPost())
+	// Read Post
+	readRes, err := client.ReadPost(ctx, &blogpb.ReadPostRequest{PostId: createdPost.PostId})
+	if err != nil {
+		log.Fatalf("ReadPost failed: %v", err)
+	}
+	fmt.Println("📖 Read Post:", readRes.GetPost())
+
+	// Update Post
+	updatedPost := &blogpb.Post{
+		PostId:  createdPost.PostId,
+		Title:   "My Updated Post",
+		Content: "This post has been updated!",
+		Author:  "Sonali Sharma",
+		Tags:    []string{"golang", "grpc", "update"},
+	}
+
+	updateRes, err := client.UpdatePost(ctx, &blogpb.UpdatePostRequest{Post: updatedPost})
+	if err != nil {
+		log.Fatalf("UpdatePost failed: %v", err)
+	}
+	fmt.Println("✏️ Updated Post:", updateRes.GetPost())
+
+	// Delete Post
+	deleteRes, err := client.DeletePost(ctx, &blogpb.DeletePostRequest{PostId: createdPost.PostId})
+	if err != nil {
+		log.Fatalf("DeletePost failed: %v", err)
+	}
+	fmt.Println("🗑️ Delete Response:", deleteRes.GetMessage())
 }
