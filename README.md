@@ -9,5 +9,4 @@ To run clinet use command
 To run test use this command
 # go test ./service
 
-Also I have captured a vedio demostrating response of APIs through postman.
-Shared that in a mail.
+Also I have captured a vedio demostrating response of APIs through Postman whihc is shared in a mail.
