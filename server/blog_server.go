@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"Golang_Assignment/blogpb"
+	"github.com/sharmasonali1605/Golang_Assignment/blogpb"
 
 	"github.com/google/uuid"
 )

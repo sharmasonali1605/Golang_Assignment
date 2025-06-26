@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"grpc-blog/blogpb"
+	"github.com/sharmasonali1605/Golang_Assignment/blogpb"
 
 	"google.golang.org/grpc"
 )
@@ -20,7 +20,7 @@ func main() {
 
 	client := blogpb.NewBlogServiceClient(conn)
 
-	post := &blogpb.BlogPost{
+	post := &blogpb.Post{
 		Title:   "My First Post",
 		Content: "Hello from gRPC!",
 		Author:  "Sonali",

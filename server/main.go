@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
-	"grpc-blog/grpc-blog/blogpb"
+
+	"github.com/sharmasonali1605/Golang_Assignment/blogpb"
+
 	"log"
 	"net"
 	"os"

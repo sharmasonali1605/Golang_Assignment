@@ -1,4 +1,4 @@
-module grpc-blog
+module github.com/sharmasonali1605/Golang_Assignment
 
 go 1.24.3
 
