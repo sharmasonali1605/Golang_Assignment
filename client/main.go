@@ -119,7 +119,7 @@ func deletePost() {
 		fmt.Printf(" Failed to delete post: %v\n", err)
 		return
 	}
-	fmt.Println("🗑️ Post Deleted:", res.GetMessage())
+	fmt.Println("Post Deleted:", res.GetMessage())
 }
 
 func prompt(label string) string {
