@@ -2,7 +2,8 @@ syntax = "proto3";
 
 package blogpb;
 
-option go_package = "grpc-blog/blogpb";
+option go_package = "./blogpb";
+
 
 message Post {
   string post_id = 1;

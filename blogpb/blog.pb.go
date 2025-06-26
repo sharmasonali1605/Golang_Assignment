@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.29.3
-// source: blogpb/blog.proto
+// source: blog.proto
 
 package blogpb
 
@@ -35,7 +35,7 @@ type Post struct {
 
 func (x *Post) Reset() {
 	*x = Post{}
-	mi := &file_blogpb_blog_proto_msgTypes[0]
+	mi := &file_blog_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47,7 +47,7 @@ func (x *Post) String() string {
 func (*Post) ProtoMessage() {}
 
 func (x *Post) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[0]
+	mi := &file_blog_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -60,7 +60,7 @@ func (x *Post) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Post.ProtoReflect.Descriptor instead.
 func (*Post) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{0}
+	return file_blog_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Post) GetPostId() string {
@@ -114,7 +114,7 @@ type CreatePostRequest struct {
 
 func (x *CreatePostRequest) Reset() {
 	*x = CreatePostRequest{}
-	mi := &file_blogpb_blog_proto_msgTypes[1]
+	mi := &file_blog_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -126,7 +126,7 @@ func (x *CreatePostRequest) String() string {
 func (*CreatePostRequest) ProtoMessage() {}
 
 func (x *CreatePostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[1]
+	mi := &file_blog_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -139,7 +139,7 @@ func (x *CreatePostRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePostRequest.ProtoReflect.Descriptor instead.
 func (*CreatePostRequest) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{1}
+	return file_blog_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreatePostRequest) GetPost() *Post {
@@ -158,7 +158,7 @@ type CreatePostResponse struct {
 
 func (x *CreatePostResponse) Reset() {
 	*x = CreatePostResponse{}
-	mi := &file_blogpb_blog_proto_msgTypes[2]
+	mi := &file_blog_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -170,7 +170,7 @@ func (x *CreatePostResponse) String() string {
 func (*CreatePostResponse) ProtoMessage() {}
 
 func (x *CreatePostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[2]
+	mi := &file_blog_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -183,7 +183,7 @@ func (x *CreatePostResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePostResponse.ProtoReflect.Descriptor instead.
 func (*CreatePostResponse) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{2}
+	return file_blog_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreatePostResponse) GetPost() *Post {
@@ -202,7 +202,7 @@ type ReadPostRequest struct {
 
 func (x *ReadPostRequest) Reset() {
 	*x = ReadPostRequest{}
-	mi := &file_blogpb_blog_proto_msgTypes[3]
+	mi := &file_blog_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -214,7 +214,7 @@ func (x *ReadPostRequest) String() string {
 func (*ReadPostRequest) ProtoMessage() {}
 
 func (x *ReadPostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[3]
+	mi := &file_blog_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -227,7 +227,7 @@ func (x *ReadPostRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReadPostRequest.ProtoReflect.Descriptor instead.
 func (*ReadPostRequest) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{3}
+	return file_blog_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ReadPostRequest) GetPostId() string {
@@ -246,7 +246,7 @@ type ReadPostResponse struct {
 
 func (x *ReadPostResponse) Reset() {
 	*x = ReadPostResponse{}
-	mi := &file_blogpb_blog_proto_msgTypes[4]
+	mi := &file_blog_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -258,7 +258,7 @@ func (x *ReadPostResponse) String() string {
 func (*ReadPostResponse) ProtoMessage() {}
 
 func (x *ReadPostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[4]
+	mi := &file_blog_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -271,7 +271,7 @@ func (x *ReadPostResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReadPostResponse.ProtoReflect.Descriptor instead.
 func (*ReadPostResponse) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{4}
+	return file_blog_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ReadPostResponse) GetPost() *Post {
@@ -290,7 +290,7 @@ type UpdatePostRequest struct {
 
 func (x *UpdatePostRequest) Reset() {
 	*x = UpdatePostRequest{}
-	mi := &file_blogpb_blog_proto_msgTypes[5]
+	mi := &file_blog_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -302,7 +302,7 @@ func (x *UpdatePostRequest) String() string {
 func (*UpdatePostRequest) ProtoMessage() {}
 
 func (x *UpdatePostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[5]
+	mi := &file_blog_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -315,7 +315,7 @@ func (x *UpdatePostRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePostRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePostRequest) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{5}
+	return file_blog_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdatePostRequest) GetPost() *Post {
@@ -334,7 +334,7 @@ type UpdatePostResponse struct {
 
 func (x *UpdatePostResponse) Reset() {
 	*x = UpdatePostResponse{}
-	mi := &file_blogpb_blog_proto_msgTypes[6]
+	mi := &file_blog_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -346,7 +346,7 @@ func (x *UpdatePostResponse) String() string {
 func (*UpdatePostResponse) ProtoMessage() {}
 
 func (x *UpdatePostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[6]
+	mi := &file_blog_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -359,7 +359,7 @@ func (x *UpdatePostResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePostResponse.ProtoReflect.Descriptor instead.
 func (*UpdatePostResponse) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{6}
+	return file_blog_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpdatePostResponse) GetPost() *Post {
@@ -378,7 +378,7 @@ type DeletePostRequest struct {
 
 func (x *DeletePostRequest) Reset() {
 	*x = DeletePostRequest{}
-	mi := &file_blogpb_blog_proto_msgTypes[7]
+	mi := &file_blog_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -390,7 +390,7 @@ func (x *DeletePostRequest) String() string {
 func (*DeletePostRequest) ProtoMessage() {}
 
 func (x *DeletePostRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[7]
+	mi := &file_blog_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -403,7 +403,7 @@ func (x *DeletePostRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePostRequest.ProtoReflect.Descriptor instead.
 func (*DeletePostRequest) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{7}
+	return file_blog_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *DeletePostRequest) GetPostId() string {
@@ -422,7 +422,7 @@ type DeletePostResponse struct {
 
 func (x *DeletePostResponse) Reset() {
 	*x = DeletePostResponse{}
-	mi := &file_blogpb_blog_proto_msgTypes[8]
+	mi := &file_blog_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -434,7 +434,7 @@ func (x *DeletePostResponse) String() string {
 func (*DeletePostResponse) ProtoMessage() {}
 
 func (x *DeletePostResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blogpb_blog_proto_msgTypes[8]
+	mi := &file_blog_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -447,7 +447,7 @@ func (x *DeletePostResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePostResponse.ProtoReflect.Descriptor instead.
 func (*DeletePostResponse) Descriptor() ([]byte, []int) {
-	return file_blogpb_blog_proto_rawDescGZIP(), []int{8}
+	return file_blog_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeletePostResponse) GetMessage() string {
@@ -457,11 +457,12 @@ func (x *DeletePostResponse) GetMessage() string {
 	return ""
 }
 
-var File_blogpb_blog_proto protoreflect.FileDescriptor
+var File_blog_proto protoreflect.FileDescriptor
 
-const file_blogpb_blog_proto_rawDesc = "" +
+const file_blog_proto_rawDesc = "" +
 	"\n" +
-	"\x11blogpb/blog.proto\x12\x06blogpb\"\xa6\x01\n" +
+	"\n" +
+	"blog.proto\x12\x06blogpb\"\xa6\x01\n" +
 	"\x04Post\x12\x17\n" +
 	"\apost_id\x18\x01 \x01(\tR\x06postId\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x18\n" +
@@ -492,22 +493,23 @@ const file_blogpb_blog_proto_rawDesc = "" +
 	"\n" +
 	"UpdatePost\x12\x19.blogpb.UpdatePostRequest\x1a\x1a.blogpb.UpdatePostResponse\x12C\n" +
 	"\n" +
-	"DeletePost\x12\x19.blogpb.DeletePostRequest\x1a\x1a.blogpb.DeletePostResponseB\x12Z\x10grpc-blog/blogpbb\x06proto3"
+	"DeletePost\x12\x19.blogpb.DeletePostRequest\x1a\x1a.blogpb.DeletePostResponseB\n" +
+	"Z\b./blogpbb\x06proto3"
 
 var (
-	file_blogpb_blog_proto_rawDescOnce sync.Once
-	file_blogpb_blog_proto_rawDescData []byte
+	file_blog_proto_rawDescOnce sync.Once
+	file_blog_proto_rawDescData []byte
 )
 
-func file_blogpb_blog_proto_rawDescGZIP() []byte {
-	file_blogpb_blog_proto_rawDescOnce.Do(func() {
-		file_blogpb_blog_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_blogpb_blog_proto_rawDesc), len(file_blogpb_blog_proto_rawDesc)))
+func file_blog_proto_rawDescGZIP() []byte {
+	file_blog_proto_rawDescOnce.Do(func() {
+		file_blog_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_blog_proto_rawDesc), len(file_blog_proto_rawDesc)))
 	})
-	return file_blogpb_blog_proto_rawDescData
+	return file_blog_proto_rawDescData
 }
 
-var file_blogpb_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_blogpb_blog_proto_goTypes = []any{
+var file_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_blog_proto_goTypes = []any{
 	(*Post)(nil),               // 0: blogpb.Post
 	(*CreatePostRequest)(nil),  // 1: blogpb.CreatePostRequest
 	(*CreatePostResponse)(nil), // 2: blogpb.CreatePostResponse
@@ -518,7 +520,7 @@ var file_blogpb_blog_proto_goTypes = []any{
 	(*DeletePostRequest)(nil),  // 7: blogpb.DeletePostRequest
 	(*DeletePostResponse)(nil), // 8: blogpb.DeletePostResponse
 }
-var file_blogpb_blog_proto_depIdxs = []int32{
+var file_blog_proto_depIdxs = []int32{
 	0, // 0: blogpb.CreatePostRequest.post:type_name -> blogpb.Post
 	0, // 1: blogpb.CreatePostResponse.post:type_name -> blogpb.Post
 	0, // 2: blogpb.ReadPostResponse.post:type_name -> blogpb.Post
@@ -539,26 +541,26 @@ var file_blogpb_blog_proto_depIdxs = []int32{
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_blogpb_blog_proto_init() }
-func file_blogpb_blog_proto_init() {
-	if File_blogpb_blog_proto != nil {
+func init() { file_blog_proto_init() }
+func file_blog_proto_init() {
+	if File_blog_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_blogpb_blog_proto_rawDesc), len(file_blogpb_blog_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_blog_proto_rawDesc), len(file_blog_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_blogpb_blog_proto_goTypes,
-		DependencyIndexes: file_blogpb_blog_proto_depIdxs,
-		MessageInfos:      file_blogpb_blog_proto_msgTypes,
+		GoTypes:           file_blog_proto_goTypes,
+		DependencyIndexes: file_blog_proto_depIdxs,
+		MessageInfos:      file_blog_proto_msgTypes,
 	}.Build()
-	File_blogpb_blog_proto = out.File
-	file_blogpb_blog_proto_goTypes = nil
-	file_blogpb_blog_proto_depIdxs = nil
+	File_blog_proto = out.File
+	file_blog_proto_goTypes = nil
+	file_blog_proto_depIdxs = nil
 }
