@@ -33,7 +33,3 @@ func (s *BlogService) UpdatePost(post *blogpb.Post) (*blogpb.Post, error) {
 func (s *BlogService) DeletePost(id string) error {
 	return s.repo.Delete(id)
 }
-
-func (s *BlogService) ListPosts() ([]*blogpb.Post, error) {
-	return s.repo.List()
-}
