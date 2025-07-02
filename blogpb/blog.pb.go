@@ -457,6 +457,86 @@ func (x *DeletePostResponse) GetMessage() string {
 	return ""
 }
 
+type ListPostRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPostRequest) Reset() {
+	*x = ListPostRequest{}
+	mi := &file_blog_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPostRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPostRequest) ProtoMessage() {}
+
+func (x *ListPostRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPostRequest.ProtoReflect.Descriptor instead.
+func (*ListPostRequest) Descriptor() ([]byte, []int) {
+	return file_blog_proto_rawDescGZIP(), []int{9}
+}
+
+type ListPostResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Post          []*Post                `protobuf:"bytes,1,rep,name=post,proto3" json:"post,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListPostResponse) Reset() {
+	*x = ListPostResponse{}
+	mi := &file_blog_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListPostResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListPostResponse) ProtoMessage() {}
+
+func (x *ListPostResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_blog_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListPostResponse.ProtoReflect.Descriptor instead.
+func (*ListPostResponse) Descriptor() ([]byte, []int) {
+	return file_blog_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ListPostResponse) GetPost() []*Post {
+	if x != nil {
+		return x.Post
+	}
+	return nil
+}
+
 var File_blog_proto protoreflect.FileDescriptor
 
 const file_blog_proto_rawDesc = "" +
@@ -485,7 +565,10 @@ const file_blog_proto_rawDesc = "" +
 	"\x11DeletePostRequest\x12\x17\n" +
 	"\apost_id\x18\x01 \x01(\tR\x06postId\".\n" +
 	"\x12DeletePostResponse\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage2\x9b\x02\n" +
+	"\amessage\x18\x01 \x01(\tR\amessage\"\x11\n" +
+	"\x0fListPostRequest\"4\n" +
+	"\x10ListPostResponse\x12 \n" +
+	"\x04post\x18\x01 \x03(\v2\f.blogpb.PostR\x04post2\xda\x02\n" +
 	"\vBlogService\x12C\n" +
 	"\n" +
 	"CreatePost\x12\x19.blogpb.CreatePostRequest\x1a\x1a.blogpb.CreatePostResponse\x12=\n" +
@@ -493,7 +576,8 @@ const file_blog_proto_rawDesc = "" +
 	"\n" +
 	"UpdatePost\x12\x19.blogpb.UpdatePostRequest\x1a\x1a.blogpb.UpdatePostResponse\x12C\n" +
 	"\n" +
-	"DeletePost\x12\x19.blogpb.DeletePostRequest\x1a\x1a.blogpb.DeletePostResponseB\n" +
+	"DeletePost\x12\x19.blogpb.DeletePostRequest\x1a\x1a.blogpb.DeletePostResponse\x12=\n" +
+	"\bListPost\x12\x17.blogpb.ListPostRequest\x1a\x18.blogpb.ListPostResponseB\n" +
 	"Z\b./blogpbb\x06proto3"
 
 var (
@@ -508,7 +592,7 @@ func file_blog_proto_rawDescGZIP() []byte {
 	return file_blog_proto_rawDescData
 }
 
-var file_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_blog_proto_goTypes = []any{
 	(*Post)(nil),               // 0: blogpb.Post
 	(*CreatePostRequest)(nil),  // 1: blogpb.CreatePostRequest
@@ -519,26 +603,31 @@ var file_blog_proto_goTypes = []any{
 	(*UpdatePostResponse)(nil), // 6: blogpb.UpdatePostResponse
 	(*DeletePostRequest)(nil),  // 7: blogpb.DeletePostRequest
 	(*DeletePostResponse)(nil), // 8: blogpb.DeletePostResponse
+	(*ListPostRequest)(nil),    // 9: blogpb.ListPostRequest
+	(*ListPostResponse)(nil),   // 10: blogpb.ListPostResponse
 }
 var file_blog_proto_depIdxs = []int32{
-	0, // 0: blogpb.CreatePostRequest.post:type_name -> blogpb.Post
-	0, // 1: blogpb.CreatePostResponse.post:type_name -> blogpb.Post
-	0, // 2: blogpb.ReadPostResponse.post:type_name -> blogpb.Post
-	0, // 3: blogpb.UpdatePostRequest.post:type_name -> blogpb.Post
-	0, // 4: blogpb.UpdatePostResponse.post:type_name -> blogpb.Post
-	1, // 5: blogpb.BlogService.CreatePost:input_type -> blogpb.CreatePostRequest
-	3, // 6: blogpb.BlogService.ReadPost:input_type -> blogpb.ReadPostRequest
-	5, // 7: blogpb.BlogService.UpdatePost:input_type -> blogpb.UpdatePostRequest
-	7, // 8: blogpb.BlogService.DeletePost:input_type -> blogpb.DeletePostRequest
-	2, // 9: blogpb.BlogService.CreatePost:output_type -> blogpb.CreatePostResponse
-	4, // 10: blogpb.BlogService.ReadPost:output_type -> blogpb.ReadPostResponse
-	6, // 11: blogpb.BlogService.UpdatePost:output_type -> blogpb.UpdatePostResponse
-	8, // 12: blogpb.BlogService.DeletePost:output_type -> blogpb.DeletePostResponse
-	9, // [9:13] is the sub-list for method output_type
-	5, // [5:9] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	0,  // 0: blogpb.CreatePostRequest.post:type_name -> blogpb.Post
+	0,  // 1: blogpb.CreatePostResponse.post:type_name -> blogpb.Post
+	0,  // 2: blogpb.ReadPostResponse.post:type_name -> blogpb.Post
+	0,  // 3: blogpb.UpdatePostRequest.post:type_name -> blogpb.Post
+	0,  // 4: blogpb.UpdatePostResponse.post:type_name -> blogpb.Post
+	0,  // 5: blogpb.ListPostResponse.post:type_name -> blogpb.Post
+	1,  // 6: blogpb.BlogService.CreatePost:input_type -> blogpb.CreatePostRequest
+	3,  // 7: blogpb.BlogService.ReadPost:input_type -> blogpb.ReadPostRequest
+	5,  // 8: blogpb.BlogService.UpdatePost:input_type -> blogpb.UpdatePostRequest
+	7,  // 9: blogpb.BlogService.DeletePost:input_type -> blogpb.DeletePostRequest
+	9,  // 10: blogpb.BlogService.ListPost:input_type -> blogpb.ListPostRequest
+	2,  // 11: blogpb.BlogService.CreatePost:output_type -> blogpb.CreatePostResponse
+	4,  // 12: blogpb.BlogService.ReadPost:output_type -> blogpb.ReadPostResponse
+	6,  // 13: blogpb.BlogService.UpdatePost:output_type -> blogpb.UpdatePostResponse
+	8,  // 14: blogpb.BlogService.DeletePost:output_type -> blogpb.DeletePostResponse
+	10, // 15: blogpb.BlogService.ListPost:output_type -> blogpb.ListPostResponse
+	11, // [11:16] is the sub-list for method output_type
+	6,  // [6:11] is the sub-list for method input_type
+	6,  // [6:6] is the sub-list for extension type_name
+	6,  // [6:6] is the sub-list for extension extendee
+	0,  // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_blog_proto_init() }
@@ -552,7 +641,7 @@ func file_blog_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_blog_proto_rawDesc), len(file_blog_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

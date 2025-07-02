@@ -12,6 +12,7 @@ type BlogRepository interface {
 	Read(id string) (*blogpb.Post, error)
 	Update(post *blogpb.Post) (*blogpb.Post, error)
 	Delete(id string) error
+	List() ([]*blogpb.Post, error)
 }
 
 type InMemoryBlogRepository struct {
@@ -61,4 +62,15 @@ func (r *InMemoryBlogRepository) Delete(id string) error {
 	}
 	delete(r.posts, id)
 	return nil
+}
+
+func (r *InMemoryBlogRepository) List() ([]*blogpb.Post, error) {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	posts := make([]*blogpb.Post, 0, len(r.posts))
+	for _, post := range r.posts {
+		posts = append(posts, post)
+	}
+	return posts, nil
+
 }

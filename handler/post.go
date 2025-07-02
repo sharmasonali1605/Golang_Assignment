@@ -55,3 +55,12 @@ func (h *BlogHandler) DeletePost(ctx context.Context, req *blogpb.DeletePostRequ
 	}
 	return &blogpb.DeletePostResponse{Message: "Post deleted"}, nil
 }
+
+func (h *BlogHandler) ListPost(ctx context.Context, req *blogpb.ListPostRequest) (*blogpb.ListPostResponse, error) {
+	posts, err := h.svc.ListPosts()
+	if err != nil {
+		return nil, status.Errorf(codes.Internal, "failed to list posts: %v", err)
+	}
+
+	return &blogpb.ListPostResponse{Post: posts}, nil
+}

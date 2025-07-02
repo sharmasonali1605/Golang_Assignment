@@ -46,11 +46,21 @@ message DeletePostResponse {
   string message = 1;
 }
 
+message ListPostRequest{
+        
+}
+
+message ListPostResponse{
+   repeated Post post = 1;
+}
+
+
 service BlogService {
   rpc CreatePost(CreatePostRequest) returns (CreatePostResponse);
   rpc ReadPost(ReadPostRequest) returns (ReadPostResponse);
   rpc UpdatePost(UpdatePostRequest) returns (UpdatePostResponse);
   rpc DeletePost(DeletePostRequest) returns (DeletePostResponse);
+  rpc ListPost(ListPostRequest)  returns (ListPostResponse);
 }
 
 /*

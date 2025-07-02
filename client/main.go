@@ -27,7 +27,7 @@ func main() {
 	reader = bufio.NewReader(os.Stdin)
 
 	for {
-		fmt.Println("\n Choose operation: create | read | update | delete | exit")
+		fmt.Println("\n Choose operation: create | read | update | delete | list | exit")
 		fmt.Print("-> ")
 		cmd := readLine()
 
@@ -40,6 +40,8 @@ func main() {
 			updatePost()
 		case "delete":
 			deletePost()
+		case "list":
+			ListPosts()
 		default:
 			fmt.Println("Unknown command.")
 		}
@@ -120,6 +122,22 @@ func deletePost() {
 		return
 	}
 	fmt.Println("Post Deleted:", res.GetMessage())
+}
+
+func ListPosts() {
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	res, err := client.ListPost(ctx, &blogpb.ListPostRequest{})
+	if err != nil {
+		fmt.Printf("Failed to list posts: %v\n", err)
+		return
+	}
+
+	fmt.Println("Posts:")
+	for _, post := range res.GetPost() {
+		fmt.Printf("ID: %s, Title: %s, Author: %s, Tags: %v\n", post.GetPostId(), post.GetTitle(), post.GetAuthor(), post.GetTags())
+	}
 }
 
 func prompt(label string) string {
